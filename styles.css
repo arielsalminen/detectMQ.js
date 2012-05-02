@@ -1,0 +1,31 @@
+html {
+  text-align: center;
+  margin: 3em;
+}
+
+#which {
+  color: red;
+  }
+
+body:after {
+  content: "phone";
+  display: none;
+  }
+
+@media screen and (min-width: 48em) {
+  body:after {
+    content: "tablet";
+    }
+  }
+
+@media screen and (min-width: 60em) {
+  body:after {
+    content: "laptop";
+    }
+  }
+
+@media screen and (min-width: 80em) {
+  body:after {
+    content: "desktop";
+    }
+  }
