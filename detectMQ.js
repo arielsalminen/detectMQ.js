@@ -1,3 +1,5 @@
+/*jslint browser: true, sloppy: true, vars: true, plusplus: true, indent: 2 */
+
 // @misteroneill's Resizestop event
 // https://github.com/misteroneill/resize-stop
 (function (window, setTimeout, Date) {
@@ -60,20 +62,20 @@ function doSomething() {
 
   var getStyle = document.getElementById("test"),
     contentValue = window.getComputedStyle(document.body, ":after").getPropertyValue("content"),
-    size = contentValue.replace(/['"]/g,''),
+    size = contentValue.replace(/['"]/g, ''),
     element = document.getElementById("which");
 
   //console.log(size);
 
-  if (size === "phone") { element.innerHTML ="phone"; }
+  if (size === "phone") { element.innerHTML = "phone"; }
   if (size === "tablet") { element.innerHTML = "tablet"; }
   if (size === "laptop") { element.innerHTML = "laptop"; }
-  if(size === "desktop") { element.innerHTML = "desktop"; }
+  if (size === "desktop") { element.innerHTML = "desktop"; }
 
 }
 
 // Logic to call the above function
-if (live === true ) {
+if (live === true) {
   window.onload = function () {
     doSomething();
   };
