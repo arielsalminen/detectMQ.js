@@ -3,7 +3,7 @@
 
 There doesn't seem to be a good way right now to detect in JavaScript which media query is being used currently. This is my personal work-in-progress based on the post and the ideas on Jeremy Keith's site http://adactio.com/journal/5429/ to make the detection a bit easier and to make it also work when the browser window is resized.
 
-Current detection works at least on Safari, Chrome, Firefox, Opera and Opera Mobile, but you really shouldn't use this yet as this is right now just a proof of concept with some _really ugly_ JavaScript code. More better stuff will come here later, just wait...
+Current detection works at least on Explorer 9, Safari, Chrome, Firefox, Opera and Opera Mobile, but you really shouldn't use this yet as this is right now just a proof of concept with some _ugly_ JavaScript code inside. More better stuff will come here later, just wait...
 
 ### Problems:
 
