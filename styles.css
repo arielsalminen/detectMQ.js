@@ -1,31 +1,27 @@
+/*! detectMQ.js v0.1 by @viljamis */
+
 html {
   text-align: center;
   margin: 3em;
-}
+  }
 
 #which {
   color: red;
   }
 
 body:after {
-  content: "phone";
+  content: "narrow";
   display: none;
   }
 
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 40em) {
   body:after {
-    content: "tablet";
+    content: "normal";
     }
   }
 
-@media screen and (min-width: 60em) {
+@media screen and (min-width: 70em) {
   body:after {
-    content: "laptop";
-    }
-  }
-
-@media screen and (min-width: 80em) {
-  body:after {
-    content: "desktop";
+    content: "wide";
     }
   }
