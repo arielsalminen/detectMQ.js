@@ -29,7 +29,7 @@
   if (live === true) {
     win.addEventListener("resize", function () {
       clearTimeout(dmq_timeout);
-      dmq_timeout = setTimeout(getValues, initDmq);
+      dmq_timeout = setTimeout(getValues);
     }, false);
   }
 
