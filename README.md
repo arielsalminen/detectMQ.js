@@ -9,14 +9,16 @@ Current detection works at least on Explorer 9, Explorer 9 mobile, Safari 5.1, i
 For demo go to [http://viljamis.com/detectmq/](http://viljamis.com/detectmq/)
 
 #### Features:
- * Only 272 bytes minified and gzipped
+ * Only 253 bytes minified and gzipped
  * Trigger events on pageload and on window resize
  * Custom threshold time before events trigger
 
 ### Problems:
 Opera and Firefox seem to return PropertyValue with quotes and webkit without, so I'm currently stripping out all quotes from the string. Might cause some problems.
 
-Doesn't work on iOS 4.3 and on older Android devices, but if you anyway use mobile first approach that shouldn't be a problem.
+Doesn't work on iOS 4.3 and on older Android devices (yet, but I will work on this later to make it happen), but if you anyway use mobile first approach that shouldn't be a problem.
+
+Need to write documentation.
 
 
 
