@@ -2,18 +2,38 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Detect if a Media Query is being used</title>
+  <title>Detect if a Media Query is being used or not</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="styles.css" />
   <script>
-    // Live triggers on resize
-    // False triggers on resize stop
-    var live = true;
+    var detect_mq = { 
+      live: true,
+      threshold: 300,
+      callback: function () {
+
+        var element = document.getElementById("which");
+
+        // If narrow layout
+        if (dmq_size === "narrow") {
+          element.innerHTML = "narrow";
+        }
+
+        // If normal layout
+        if (dmq_size === "normal") {
+          element.innerHTML = "normal";
+        }
+
+        // If wide layout
+        if (dmq_size === "wide") {
+          element.innerHTML = "wide";
+        }
+
+      }
+    };
   </script>
   <script src="detectMQ.js"></script>
 </head>
 <body>
-  <p id="test">Detect if a Media Query is being used</p>
-  <h1>Media Query "<span id="which">phone</span>" in use right now.</h1>
+  <h1>Media query ‘<span id="which">narrow</span>’ in use.</h1>
 </body>
 </html>
