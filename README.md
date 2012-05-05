@@ -7,7 +7,7 @@ There doesn't seem to be a good way right now to detect in JavaScript which medi
 For demo go to [http://viljamis.com/detectmq/](http://viljamis.com/detectmq/)
 
 #### Features:
- * Only 253 bytes minified and gzipped
+ * Only 245 bytes minified and gzipped
  * Trigger events on pageload and on window resize
  * Custom threshold time before events trigger
 
