@@ -1,17 +1,68 @@
-# detectMQ.js v0.2
+# detectMQ.js
 ### Simple way to detect in JavaScript if a Media Query is being used or not
 
-There doesn't seem to be a good way right now to detect in JavaScript which media query is being used currently without duplicating the breakpoints. This is my personal work-in-progress based on the post and the ideas on Jeremy Keith's site http://adactio.com/journal/5429/ to make the detection a bit easier and to make it also work when the browser window is resized.
+There isn't a good way right now to detect in JavaScript which Media Query is being used currently without duplicating the breakpoints. This is a work-in-progress based on the post and the ideas on [Jeremy Keith's site](http://adactio.com/journal/5429/) to make the detection a bit easier and to make it also work when the browser window is resized.
 
-#### Demo:
-For demo go to [http://viljamis.com/detectmq/](http://viljamis.com/detectmq/)
+### Features
+ * 245 bytes minified and gzipped
+ * Trigger on pageload and window resize
+ * Custom threshold time before triggering
 
-#### Features:
- * Only 245 bytes minified and gzipped
- * Trigger events on pageload and on window resize
- * Custom threshold time before events trigger
+## How it works
 
-#### Browser support:
+#### CSS
+First you specify in CSS a hidden `:after` pseudo element for `body` and change the content of that inside every Media Query. You could think of these as the "titles" of your Media Queries. You can have as many of them as you'd like + you can use your own names as long as you don't include any spaces in the name.
+
+    body:after {
+      content: "narrow";
+      display: none;
+    }
+    @media screen and (min-width: 40em) {
+      body:after {
+        content: "normal";
+      }
+    }
+    @media screen and (min-width: 70em) {
+      body:after {
+        content: "wide";
+      }
+    }
+
+#### JavaScript
+You have to first specify setting you'd like to use and after that include the JavaScript plugin. Inside the `callback` option you use the same "titles" which you used in CSS. `live` and `threshold` settings are optional and you can see the defaults below:
+
+    <script>
+      var detect_mq = {
+        live: true, // Boolean: Trigger on window resize, true or false
+        threshold: 200, // Integer: Threshold time after window resize, in milliseconds
+        callback: function () {
+
+          var element = document.getElementById("which");
+
+          // If narrow layout
+          if (dmq_size == "narrow") {
+            element.innerHTML = dmq_size;
+          }
+
+          // If normal layout
+          if (dmq_size == "normal") {
+            element.innerHTML = dmq_size;
+          }
+
+          // If wide layout
+          if (dmq_size == "wide") {
+            element.innerHTML = dmq_size;
+          }
+
+        }
+      };
+    </script>
+    <script src="detectMQ.js"></script>
+
+## Demo:
+For a demo go to [http://viljamis.com/detectmq/](http://viljamis.com/detectmq/)
+
+### Browser support:
  * Explorer 9+
  * Explorer 9 mobile
  * Safari 5
@@ -28,13 +79,11 @@ Doesn't work on IE6-8, iOS 4.3.2, older Android devices and on Symbian 3 Webkit,
 
 Opera and Firefox seem to return PropertyValue with quotes and webkit without, so I'm currently stripping out all quotes from the string. Might cause some problems.
 
-I need to write documentation.
+## Changelog
+* `v 0.2` - Fixes threshold option and adds list of tested browsers
+* `v 0.1` - Initial Release
 
-
-
-License
-======
-
+## License
 Licensed under the MIT license.
 
 Copyright (c) 2011-2012 Viljami Salminen, [http://viljamis.com/](http://viljamis.com/)
@@ -44,12 +93,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-
-Changelog
-======
-
-v0.2 (2012-05-05) - Fixes threshold option and adds list of tested browsers
-
-v0.1 (2012-05-04) - Initial Release
