@@ -51,4 +51,5 @@ Changelog
 ======
 
 v0.2 (2012-05-05) - Fixes threshold option and adds list of tested browsers
+
 v0.1 (2012-05-04) - Initial Release
