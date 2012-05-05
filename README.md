@@ -1,7 +1,8 @@
-## Detect Media Query
-### Simple way to detect in JavaScript if a Media Query is being used or not
+# detectMQ.js, a JavaScript plugin to detect if a Media Query is currently being used
+DetectMQ is a work-in-progress based on the post and the ideas on [Jeremy Keith's site](http://adactio.com/journal/5429/) to make the detection of currently used Media Query easier.
 
-There isn't a good way right now to detect in JavaScript which Media Query is being used currently without duplicating the breakpoints. This is a work-in-progress based on the post and the ideas on [Jeremy Keith's site](http://adactio.com/journal/5429/) to make the detection a bit easier and to make it also work when the browser window is resized.
+### Why?
+It makes much more sense to keep the Media Queries in only one place and this way you are also able to match the breakpoints accurately in every browser. But there's also more to it than just that: Think of a responsive web application where you need to use different JavaScript when the layout changes. This'll make that much easier.
 
 ### Features
  * 245 bytes minified and gzipped
