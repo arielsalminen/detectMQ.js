@@ -41,21 +41,16 @@ You have to first specify setting you'd like to use and after that include the J
     threshold: 200, // Integer: Threshold time after window resize, in milliseconds
     callback: function () {
 
-      var element = document.getElementById("which");
-
-      // If narrow layout
       if (dmq_size == "narrow") {
-        element.innerHTML = dmq_size;
+        // Do something
       }
 
-      // If normal layout
       if (dmq_size == "normal") {
-        element.innerHTML = dmq_size;
+        // Do something
       }
 
-      // If wide layout
       if (dmq_size == "wide") {
-        element.innerHTML = dmq_size;
+        // Do something
       }
 
     }
