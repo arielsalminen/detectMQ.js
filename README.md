@@ -14,51 +14,55 @@ It makes much more sense to keep the Media Queries in only one place and this wa
 #### CSS
 First you specify in CSS a hidden `:after` pseudo element for `body` and change the content of that inside every Media Query. You could think of these as the "titles" of your Media Queries. You can have as many of them as you'd like + you can use your own names as long as you don't include any spaces in the name.
 
-    body:after {
-      content: "narrow";
-      display: none;
-    }
-    @media screen and (min-width: 40em) {
-      body:after {
-        content: "normal";
-      }
-    }
-    @media screen and (min-width: 70em) {
-      body:after {
-        content: "wide";
-      }
-    }
+```css
+body:after {
+  content: "narrow";
+  display: none;
+}
+@media screen and (min-width: 40em) {
+  body:after {
+    content: "normal";
+  }
+}
+@media screen and (min-width: 70em) {
+  body:after {
+    content: "wide";
+  }
+}
+```
 
 #### JavaScript
 You have to first specify setting you'd like to use and after that include the JavaScript plugin. Inside the `callback` option you use the same "titles" which you used in CSS. `live` and `threshold` settings are optional and you can see the defaults below:
 
-    <script>
-      var detect_mq = {
-        live: true, // Boolean: Trigger on window resize, true or false
-        threshold: 200, // Integer: Threshold time after window resize, in milliseconds
-        callback: function () {
+```javascript
+<script>
+  var detect_mq = {
+    live: true, // Boolean: Trigger on window resize, true or false
+    threshold: 200, // Integer: Threshold time after window resize, in milliseconds
+    callback: function () {
 
-          var element = document.getElementById("which");
+      var element = document.getElementById("which");
 
-          // If narrow layout
-          if (dmq_size == "narrow") {
-            element.innerHTML = dmq_size;
-          }
+      // If narrow layout
+      if (dmq_size == "narrow") {
+        element.innerHTML = dmq_size;
+      }
 
-          // If normal layout
-          if (dmq_size == "normal") {
-            element.innerHTML = dmq_size;
-          }
+      // If normal layout
+      if (dmq_size == "normal") {
+        element.innerHTML = dmq_size;
+      }
 
-          // If wide layout
-          if (dmq_size == "wide") {
-            element.innerHTML = dmq_size;
-          }
+      // If wide layout
+      if (dmq_size == "wide") {
+        element.innerHTML = dmq_size;
+      }
 
-        }
-      };
-    </script>
-    <script src="detectMQ.js"></script>
+    }
+  };
+</script>
+<script src="detectMQ.js"></script>
+```
 
 ## Demo:
 For a demo go to [http://viljamis.com/detectmq/](http://viljamis.com/detectmq/)
