@@ -34,7 +34,7 @@ body:after {
 #### JavaScript
 You have to first specify setting you'd like to use and after that include the JavaScript plugin. Inside the `callback` option you use the same "titles" which you used in CSS. `live` and `threshold` settings are optional and you can see the defaults below:
 
-```javascript
+```html
 <script>
   var detect_mq = {
     live: true, // Boolean: Trigger on window resize, true or false
