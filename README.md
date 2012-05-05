@@ -62,7 +62,7 @@ You have to first specify setting you'd like to use and after that include the J
 ## Demo:
 For a demo go to [http://viljamis.com/detectmq/](http://viljamis.com/detectmq/)
 
-### Browser support:
+## Browser support:
  * Explorer 9+
  * Explorer 9 mobile
  * Safari 5
@@ -74,14 +74,14 @@ For a demo go to [http://viljamis.com/detectmq/](http://viljamis.com/detectmq/)
  * Opera Mobile 10.1
  * Mozilla Mobile (Fennec) 4.0
 
-### Problems:
+## Problems:
 Doesn't work on IE6-8, iOS 4.3.2, older Android devices and on Symbian 3 Webkit, but if you anyway use mobile first approach that shouldn't be a big problem.
 
 Opera and Firefox seem to return PropertyValue with quotes and webkit without, so I'm currently stripping out all quotes from the string. Might cause some problems.
 
 ## Changelog
-* `v 0.2` - Fixes threshold option and adds list of tested browsers
-* `v 0.1` - Initial Release
+* `v 0.2` Fixes threshold option and adds list of tested browsers
+* `v 0.1` Initial Release
 
 ## License
 Licensed under the MIT license.
