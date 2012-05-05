@@ -1,9 +1,7 @@
-# detectMQ.js v0.1
+# detectMQ.js v0.2
 ### Simple way to detect in JavaScript if a Media Query is being used or not
 
 There doesn't seem to be a good way right now to detect in JavaScript which media query is being used currently without duplicating the breakpoints. This is my personal work-in-progress based on the post and the ideas on Jeremy Keith's site http://adactio.com/journal/5429/ to make the detection a bit easier and to make it also work when the browser window is resized.
-
-Current detection works at least on Explorer 9, Explorer 9 mobile, Safari 5.1, iOS 5 Safari, Chrome 18, Firefox 6, Opera 11.6 and Opera Mobile 10.1.
 
 #### Demo:
 For demo go to [http://viljamis.com/detectmq/](http://viljamis.com/detectmq/)
@@ -13,12 +11,24 @@ For demo go to [http://viljamis.com/detectmq/](http://viljamis.com/detectmq/)
  * Trigger events on pageload and on window resize
  * Custom threshold time before events trigger
 
+#### Browser support:
+ * Explorer 9+
+ * Explorer 9 mobile
+ * Safari 5
+ * iOS 5 Safari
+ * Chrome 18
+ * Firefox 3.6+
+ * Opera 11
+ * Opera Mini 7
+ * Opera Mobile 10.1
+ * Mozilla Mobile (Fennec) 4.0
+
 ### Problems:
+Doesn't work on IE6-8, iOS 4.3.2, older Android devices and on Symbian 3 Webkit, but if you anyway use mobile first approach that shouldn't be a big problem.
+
 Opera and Firefox seem to return PropertyValue with quotes and webkit without, so I'm currently stripping out all quotes from the string. Might cause some problems.
 
-Doesn't work on iOS 4.3 and on older Android devices (yet, but I will work on this later to make it happen), but if you anyway use mobile first approach that shouldn't be a problem.
-
-Need to write documentation.
+I need to write documentation.
 
 
 
@@ -40,4 +50,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 Changelog
 ======
 
-v0.10 (2012-05-04) - Initial Release
+v0.2 (2012-05-05) - Fixes threshold option and adds list of tested browsers
+v0.1 (2012-05-04) - Initial Release
