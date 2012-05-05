@@ -1,25 +1,32 @@
-/*! detectMQ.js v0.1 by @viljamis */
+/*! detectMQ.js v0.2 by @viljamis */
 (function (win) {
 
-  var dmq_timeout;
+  // Default settings
+  var dmq_timeout,
+    doc       = win.document,
+    dmq       = win.detect_mq || {},
+    live      = dmq.live || true,
+    threshold = dmq.threshold || 200,
+    callback  = dmq.callback || {},
 
-  var dmq         = win.detect_mq || {},
-    live          = dmq.live || true,
-    threshold     = dmq.threshold || 300,
-    doc           = win.document,
-    callback      = dmq.callback || {};
+    // Get style
+    getStyle = function (el, pseudo, cssprop) {
+      return win.getComputedStyle(el, pseudo)[cssprop];
+    },
 
-  var getValues = function () {
-      dmq_contentValue = win.getComputedStyle(doc.body, ":after").getPropertyValue("content");
+    // Get value
+    getValue = function () {
+      var dmq_contentValue = getStyle(doc.body, ":after", "content");
       dmq_size = dmq_contentValue.replace(/['"]/g, "");
       callback();
     };
 
-  win.addEventListener("load", getValues, false);
+  // Add event listeners
+  win.addEventListener("load", getValue, false);
   if (live === true) {
     win.addEventListener("resize", function () {
       clearTimeout(dmq_timeout);
-      dmq_timeout = setTimeout(getValues);
+      dmq_timeout = setTimeout(getValue, threshold);
     }, false);
   }
 
