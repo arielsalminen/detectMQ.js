@@ -32,31 +32,28 @@ body:after {
 ```
 
 #### JavaScript
-You have to first specify setting you'd like to use and after that include the JavaScript plugin. Inside the `callback` option you use the same "titles" which you used in CSS. `live` and `threshold` settings are optional and you can see the defaults below:
+You have to first specify setting you'd like to use and after that include the JavaScript plugin (Check index.html in this repository). Inside the `callback` option you use the same "titles" which you used in CSS. `live` and `threshold` settings are optional and you can see the defaults below:
 
-```html
-<script>
-  var detect_mq = {
-    live: true, // Boolean: Trigger on window resize, true or false
-    threshold: 200, // Integer: Threshold time after window resize, in milliseconds
-    callback: function () {
+```javascript
+var detect_mq = {
+  live: true, // Boolean: Trigger on window resize, true or false
+  threshold: 200, // Integer: Threshold time after window resize, in milliseconds
+  callback: function () {
 
-      if (dmq_size == "narrow") {
-        // Do something
-      }
-
-      if (dmq_size == "normal") {
-        // Do something
-      }
-
-      if (dmq_size == "wide") {
-        // Do something
-      }
-
+    if (dmq_size == "narrow") {
+      // Do something
     }
-  };
-</script>
-<script src="detectMQ.js"></script>
+
+    if (dmq_size == "normal") {
+      // Do something
+    }
+
+    if (dmq_size == "wide") {
+      // Do something
+    }
+
+  }
+};
 ```
 
 ## Demo:
