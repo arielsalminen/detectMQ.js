@@ -1,27 +1,22 @@
-/*! detectMQ.js v0.1 by @viljamis */
-
+/*! detectMQ.js v0.2 by @viljamis */
 html {
   text-align: center;
   margin: 3em;
-  }
-
+}
 #which {
   color: red;
-  }
-
+}
 body:after {
   content: "narrow";
   display: none;
-  }
-
+}
 @media screen and (min-width: 40em) {
   body:after {
     content: "normal";
-    }
   }
-
+}
 @media screen and (min-width: 70em) {
   body:after {
     content: "wide";
-    }
   }
+}
