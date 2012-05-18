@@ -1,4 +1,4 @@
-/*! detectMQ.js v0.2 by @viljamis */
+/*! detectMQ.js v0.21 by @viljamis */
 (function (win) {
 
   // Default settings
@@ -21,13 +21,15 @@
       callback();
     };
 
-  // Add event listeners
-  win.addEventListener("load", getValue, false);
-  if (live === true) {
-    win.addEventListener("resize", function () {
-      clearTimeout(dmq_timeout);
-      dmq_timeout = setTimeout(getValue, threshold);
-    }, false);
+  // Add event listeners, W3C event model
+  if (doc.addEventListener) {
+    win.addEventListener("load", getValue, false);
+    if (live === true) {
+      win.addEventListener("resize", function () {
+        clearTimeout(dmq_timeout);
+        dmq_timeout = setTimeout(getValue, threshold);
+      }, false);
+    }
   }
 
 }(this));
