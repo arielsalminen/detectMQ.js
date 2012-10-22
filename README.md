@@ -77,6 +77,7 @@ Doesn't work on IE6-8, iOS 4.3.2, older Android devices and on Symbian 3 Webkit,
 Opera and Firefox seem to return PropertyValue with quotes and webkit without, so I'm currently stripping out all quotes from the string. Might cause some problems.
 
 ## Changelog
+* `v 0.22` Adds check for browsers without getComputedStyle support, thanks @vesan!
 * `v 0.21` Prevent script error in older IE's
 * `v 0.2` Fixes threshold option and adds list of tested browsers
 * `v 0.1` Initial Release
