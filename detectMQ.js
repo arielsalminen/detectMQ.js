@@ -22,7 +22,7 @@
     };
 
   // Add event listeners, W3C event model
-  if (doc.addEventListener) {
+  if (doc.addEventListener && typeof(window.getComputedStyle) != "undefined") {
     win.addEventListener("load", getValue, false);
     if (live === true) {
       win.addEventListener("resize", function () {
