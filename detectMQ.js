@@ -1,4 +1,4 @@
-/*! detectMQ.js v0.21 by @viljamis */
+/*! detectMQ.js v0.22 by @viljamis */
 (function (win) {
 
   // Default settings
