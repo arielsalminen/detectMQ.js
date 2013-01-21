@@ -36,8 +36,8 @@ You have to first specify setting you'd like to use and after that include the J
 
 ```javascript
 var detect_mq = {
-  live: true, // Boolean: Trigger on window resize, true or false
-  threshold: 200, // Integer: Threshold time after window resize, in milliseconds
+  live: true,       // Boolean: Trigger on window resize, true or false
+  threshold: 300,   // Integer: Threshold time before triggering (200ms+ recommended), in milliseconds
   callback: function () {
 
     if (dmq_size == "narrow") {
