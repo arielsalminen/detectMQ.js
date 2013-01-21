@@ -10,6 +10,7 @@ body:after {
   content: "narrow";
   display: none;
 }
+
 @media screen and (min-width: 40em) {
   body:after {
     content: "normal";
