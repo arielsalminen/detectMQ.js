@@ -1,4 +1,4 @@
-# detectMQ.js, a JavaScript plugin to detect if a Media Query is currently being used
+# detectMQ.js, a JavaScript plugin that detects if a Media Query is currently being used
 DetectMQ is based on the post and the ideas on [Jeremy Keith's site](http://adactio.com/journal/5429/) to make the detection of currently used Media Query easier.
 
 ### Why?
