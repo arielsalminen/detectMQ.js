@@ -1,13 +1,13 @@
 # detectMQ.js, a JavaScript plugin to detect if a Media Query is currently being used
-DetectMQ is a work-in-progress based on the post and the ideas on [Jeremy Keith's site](http://adactio.com/journal/5429/) to make the detection of currently used Media Query easier.
+DetectMQ is based on the post and the ideas on [Jeremy Keith's site](http://adactio.com/journal/5429/) to make the detection of currently used Media Query easier.
 
 ### Why?
 It makes much more sense to keep the Media Queries in only one place and this way you are also able to match the breakpoints accurately in every browser. But there's also more to it than just that: Think of a responsive web application where you need to use different JavaScript when the layout changes. This'll make that much easier.
 
 ### Features
- * 245 bytes minified and gzipped
+ * 285 bytes minified and gzipped
  * Trigger on pageload and window resize
- * Custom threshold time before triggering
+ * Custom threshold time before triggering (over 200ms recommended!)
 
 ## How it works
 
@@ -71,16 +71,15 @@ For a demo go to [http://viljamis.com/detectmq/](http://viljamis.com/detectmq/)
  * Opera Mobile 10.1
  * Mozilla Mobile (Fennec) 4.0
 
-## Problems:
-Doesn't work on IE6-8, iOS 4.3.2, older Android devices and on Symbian 3 Webkit, but if you anyway use mobile first approach that shouldn't be a big problem.
-
-Opera and Firefox seem to return PropertyValue with quotes and webkit without, so I'm currently stripping out all quotes from the string. Might cause some problems.
-
 ## Changelog
+* `v 0.3` No more "work in progress"(!) + Adds check for browsers without proper CSS :after support
 * `v 0.22` Adds check for browsers without getComputedStyle support, thanks @vesan!
 * `v 0.21` Prevent script error in older IE's
 * `v 0.2` Fixes threshold option and adds list of tested browsers
 * `v 0.1` Initial Release
+
+## Problems:
+Doesn't work on IE6-8 (but if needed, the support can be added), iOS 4.3.2, older Android devices and on Symbian 3 Webkit, but if you anyway use mobile first approach this isn't a big problem.
 
 ## License
 Licensed under the MIT license.
